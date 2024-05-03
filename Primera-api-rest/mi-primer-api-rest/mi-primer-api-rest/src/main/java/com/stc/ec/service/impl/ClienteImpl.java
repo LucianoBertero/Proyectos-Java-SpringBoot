@@ -1,6 +1,6 @@
 package com.stc.ec.service.impl;
 import com.stc.ec.model.dao.ClienteDao;
-import com.stc.ec.model.entity.Cliente;
+import com.stc.ec.model.dto.ClienteDto;
 import com.stc.ec.service.ICliente;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,22 +17,22 @@ public class ClienteImpl implements ICliente {
     //transtaccional hace que el metodo sea usado como transaccion
     @Transactional
     @Override
-    public Cliente save(Cliente cliente) {
-     return   clienteDao.save(cliente);
+    public ClienteDto save(ClienteDto clienteDto) {
+     return   clienteDao.save(clienteDto);
     }
 
     @Transactional(readOnly = true)
     @Override
-    public Cliente findById(Integer id) {
+    public ClienteDto findById(Integer id) {
         return clienteDao.findById(id).orElse(null);
         //sirve para mandar por si es nullo el id
     }
 
     @Transactional
     @Override
-    public void delete(Cliente cliente) {
+    public void delete(ClienteDto clienteDto) {
 
-        clienteDao.delete(cliente);
+        clienteDao.delete(clienteDto);
 
     }
 }

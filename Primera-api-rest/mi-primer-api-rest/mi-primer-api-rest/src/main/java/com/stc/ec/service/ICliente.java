@@ -1,9 +1,9 @@
 package com.stc.ec.service;
 
-import com.stc.ec.model.entity.Cliente;
+import com.stc.ec.model.dto.ClienteDto;
 
 public interface ICliente {
-    Cliente save(Cliente cliente);
-    Cliente findById(Integer id);
-    void delete(Cliente cliente);
+    ClienteDto save(ClienteDto clienteDto);
+    ClienteDto findById(Integer id);
+    void delete(ClienteDto clienteDto);
 }

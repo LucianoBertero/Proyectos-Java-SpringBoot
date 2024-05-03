@@ -1,6 +1,5 @@
-package com.stc.ec.model.dto;
+package com.stc.ec.model.entity;
 
-import jakarta.persistence.*;
 import lombok.*;
 
 import java.io.Serializable;
@@ -12,7 +11,7 @@ import java.util.Date;
 @NoArgsConstructor
 @ToString
 @Builder
-public class ClienteDto implements Serializable {
+public class Cliente implements Serializable {
     private Integer idClient;
     private String nombre;
     private String apellido;

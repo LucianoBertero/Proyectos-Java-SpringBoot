@@ -1,0 +1,37 @@
+<h2 class="mb-5">{{ contact ? "Editar" : "Nuevo" }} contacto</h2>
+
+<div class="row row-cols-3 justify-content-center">
+  @if(form){
+  <form action="" [formGroup]="form" (submit)="save()">
+    <div class="mb-3">
+      <label for="name">Nombre</label>
+      <input
+        formControlName="name"
+        id="name"
+        type="text"
+        placeholder="Nombre"
+        class="form-control"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="name">Email</label>
+      <input
+        formControlName="email"
+        id="name"
+        type="text"
+        placeholder="Email"
+        class="form-control"
+      />
+    </div>
+    <div class="text-end">
+      <button type="button" class="btn btn-light" routerLink="/">
+        Cancelar
+      </button>
+      <button class="btn btn-primary">
+        {{ contact ? "Actualizar" : "Crear" }} Contacto
+      </button>
+    </div>
+  </form>
+  }
+</div>
