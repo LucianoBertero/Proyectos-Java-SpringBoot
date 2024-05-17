@@ -1,6 +1,5 @@
 package com.jpa.entities;
 
-
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -10,7 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Coach {
+public class Player {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -20,4 +19,10 @@ public class Coach {
     private String lastName;
     private Integer age;
     private String nacionality;
+    private String position;
+
+    @ManyToOne(targetEntity=Club.class)
+    private Club club;
+
+
 }

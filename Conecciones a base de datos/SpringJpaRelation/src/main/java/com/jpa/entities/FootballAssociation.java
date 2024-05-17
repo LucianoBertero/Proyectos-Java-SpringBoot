@@ -6,18 +6,21 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Coach {
+public class FootballAssociation {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
+    private String country;
+    private String president;
 
-    @Column(name="last_name")
-    private String lastName;
-    private Integer age;
-    private String nacionality;
+    @OneToMany(targetEntity = Club.class,fetch = FetchType.LAZY,mappedBy = "clubs")
+    private List<Club> clubs;
+
 }
