@@ -20,7 +20,7 @@ public class FootballAssociation {
     private String country;
     private String president;
 
-    @OneToMany(targetEntity = Club.class,fetch = FetchType.LAZY,mappedBy = "clubs")
+    @OneToMany(targetEntity = Club.class,fetch = FetchType.LAZY)
     private List<Club> clubs;
 
 }
