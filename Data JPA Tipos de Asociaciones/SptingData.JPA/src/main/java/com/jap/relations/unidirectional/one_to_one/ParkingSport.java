@@ -1,0 +1,19 @@
+package com.jap.relations.unidirectional.one_to_one;
+
+
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
+@Entity(name="uni_ParkingSpot_one_to_one")
+@Table(name="uni_ParkingSpot_one_to_one")
+public class ParkingSport {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+}
